@@ -7,3 +7,4 @@ const name = ps(chalk`{green Your project name: }`);
 console.log("you entered " + name);
 
 const fs = require('fs');
+fs.rmdirSync('../initialize', { recursive: true });
