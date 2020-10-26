@@ -6,7 +6,7 @@ log(chalk`{green Welcome to the }{green.bold NQ Framework}{green  module setup!}
 
 const fs = require('fs');
 const folderNames = process.cwd().split('/');
-const defaultName = folderNames && folderNames.length >= 2 ? folderNames[folderNames.length - 2] : 'nq module';
+const defaultName = folderNames && folderNames.length >= 1 ? folderNames[folderNames.length - 1] : 'nq module';
 
 let inputName = ps(chalk`{green Your project name: (${defaultName}) }`);
 const name = inputName || defaultName;
