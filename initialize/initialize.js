@@ -22,5 +22,8 @@ pjson = pjson.replace('This is a template repository for adding new NQ framework
 pjson = pjson.replace('git+https://github.com/nq-framework/nq-local-connector.git', `git+https://github.com/nq-framework/${name}.git`)
 fs.writeFileSync('../package.json', pjson, 'utf8');
 
-
-// fs.rmdirSync('../initialize', { recursive: true });
+let readme = fs.readFileSync('../README-template.md', 'utf8');
+readme = readme.replace("{{name}}", name).replace("{{description}}", description);
+fs.writeFileSync('../README.md', readme, 'utf8');
+fs.unlinkSync('../README-template.md');
+fs.rmdirSync('../initialize', { recursive: true });
