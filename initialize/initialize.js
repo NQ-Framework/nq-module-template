@@ -23,7 +23,7 @@ pjson = pjson.replace('git+https://github.com/nq-framework/nq-local-connector.gi
 fs.writeFileSync('../package.json', pjson, 'utf8');
 
 let readme = fs.readFileSync('../README-template.md', 'utf8');
-readme = readme.replace("{{name}}", name).replace("{{description}}", description);
+readme = readme.replaceAll("{{name}}", name).replaceAll("{{description}}", description);
 fs.writeFileSync('../README.md', readme, 'utf8');
 fs.unlinkSync('../README-template.md');
 fs.rmdirSync('../initialize', { recursive: true });
