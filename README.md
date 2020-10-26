@@ -1,0 +1,1 @@
+# nq-module-template
